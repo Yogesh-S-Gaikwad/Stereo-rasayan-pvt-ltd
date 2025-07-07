@@ -1,0 +1,287 @@
+.about-main {
+  background-image: url(images/About\ us\ banner.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 559px;
+  display: flex;
+  align-items: center;
+}
+.about-hedding {
+  font-size: 48px;
+  font-weight: 600;
+}
+.about-text {
+  width: 60%;
+  font-size: 18px;
+}
+
+.aus-exp-pro-btn {
+  width: 259px;
+  height: 60px;
+  border-radius: 30px;
+  border: transparent;
+  color: #2a8080;
+  background: #ffd166;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  font-weight: 600;
+}
+.banner {
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 72px 0px 41px 0px;
+}
+.banner-sp1 {
+  background-color: #6ecb63;
+
+  width: 552px;
+  height: 59px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+}
+.sp1 {
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+}
+.sp2 {
+  position: relative;
+  clip-path: polygon(100% 95%, 0 0, 0% 100%, 100% 105%);
+}
+.sp3 {
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+}
+.vm-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background-color: #6ecb63;
+  min-height: 250px;
+  margin-bottom: 7px;
+}
+.v-box-about-us {
+  display: flex;
+  flex-direction: row;
+  padding: 0 100px;
+  align-items: center;
+  padding: 10px;
+}
+.vm-line {
+  width: 1px;
+  height: 100px;
+  margin: 0 96px;
+  background: #fff;
+}
+.vm-text {
+  display: flex;
+  align-items: center;
+}
+.icon-lightbulb {
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
+  font-weight: 700;
+}
+.vision-box {
+  display: flex;
+  align-items: center;
+}
+.vision-box {
+  min-height: 396px;
+  background: #2a8080;
+}
+.vision-box-div {
+  max-height: 322px;
+  background: #ffd166;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.vision-box-img-div {
+  width: 1000px;
+  height: 322px;
+  position: relative;
+}
+.vision-box-img {
+  position: absolute;
+  height: 366px;
+  bottom: 0;
+}
+.vision-box-line {
+  width: 1px;
+  height: 253px;
+  background: #000;
+}
+.vision-text {
+  max-height: 253px;
+  max-width: 766px;
+  margin-left: 41px;
+}
+
+.v-name {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+.vision-box-h4 {
+  font-size: 32px;
+  font-weight: 600;
+}
+.our-ex-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.ex-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 393px;
+  border-radius: 30px;
+  background: #e0f7f7;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+}
+.ex-line {
+  width: 326px;
+  height: 1px;
+  margin: 23px 0px 29px 0px;
+  background: #000;
+}
+.ex-card h4 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 23px;
+}
+.ex-hedding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 46px 0;
+}
+.ex-hedding h4 {
+  font-size: 32px;
+  font-weight: 600;
+}
+.ex-hedding h3 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #44c2c2;
+}
+
+.lead-team-container {
+  display: flex;
+  flex-direction: row;
+}
+.lead-team-heading {
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  margin: 48px 0px;
+}
+.lead-img-div {
+  width: 248px;
+  height: 248px;
+  border-radius: 50%;
+  background: #44c2c2;
+  position: relative;
+}
+.lead-img {
+  position: absolute;
+  width: 224px;
+  height: 224px;
+  border-radius: 47%;
+  bottom: 0;
+  right: 10px;
+}
+.lead-team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.lead-underline {
+  width: 258px;
+  height: 2px;
+  background: #ffd166;
+}
+.lead-name {
+  width: 172px;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 12px 0px 0px 0px;
+}
+.qualification {
+  width: 201px;
+}
+.designation {
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .lead-team-container {
+    flex-direction: column;
+  }
+  .lead-line2 {
+    width: 100%;
+    height: 2px;
+    background: #000;
+    margin: 10px;
+  }
+  .banner {
+    flex-direction: column;
+    align-items: center;
+  }
+  .banner svg {
+    margin: 5px 0;
+    width: 100%;
+  }
+  .v-box-about-us {
+    flex-direction: column;
+  }
+  .vm-line {
+    display: none;
+  }
+  .about-text {
+    width: 100%;
+  }
+  .vision-box-div {
+    flex-direction: column;
+    height: auto;
+  }
+  .vision-box {
+    min-height: 225px;
+  }
+  .vision-box-img-div {
+    height: 0;
+  }
+  .vision-box-img {
+    height: 166px;
+    top: 0;
+  }
+  .vision-box-line {
+    display: none;
+  }
+  .vision-text p {
+    font-size: 12px;
+  }
+  .vision-box-h4 {
+    font-size: 18px;
+  }
+  .vision-box-img-div {
+    display: none;
+  }
+  .our-ex-cards {
+    flex-direction: column;
+  }
+  .ex-card {
+    margin: 10px;
+  }
+}

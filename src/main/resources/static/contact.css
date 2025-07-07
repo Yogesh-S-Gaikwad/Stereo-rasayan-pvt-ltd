@@ -1,0 +1,99 @@
+.can-div{
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+}
+.con-frm{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.contact-form input,textarea{
+    width: 90%;
+}
+.contact-form-line{
+    width: 1px;
+    height: 524px;
+    background: #000;
+    margin:0 57px 0 37px;
+}
+form input,
+form textarea {
+  padding: 10px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  height: 60px;
+}
+
+button {
+  padding: 10px 30px;
+  background-color: #3a7c68;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.contact-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-between;
+}
+.contact-info p{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.map-div{
+    height: 263px;
+    margin: 132px 0 132px 0;
+
+}
+.map-div iframe
+{
+    border-radius: 50px;
+}
+.form-sub-btn{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 20px;
+}
+.form-sub-btn button{
+    width: 277px;
+height: 60px;
+border-radius: 30px;
+background: #2A8080;
+font-size: 18px;
+font-weight: 600;
+}
+@media  (max-width: 768px)  {
+  .can-div{
+    flex-direction: column;
+}
+.contact-form-line{
+    display: none;
+}
+.contact-info{
+    flex-direction: row;
+}
+.cnt-field{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.con-frm{
+    flex-direction: column;
+}
+.map-div{
+    margin: 10px 0 20px 0;
+}
+}

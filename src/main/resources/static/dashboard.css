@@ -1,0 +1,53 @@
+section{
+     background: powderblue;
+}
+.dashbordDiv{
+    height: 800px;
+    width: 100%;
+    background: powderblue;
+}
+.productform{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.productform input{
+    border-radius: 20px;
+    padding: 5px;
+    border: transparent;
+    width: 70%;
+}
+.Ufile{
+    border-radius: 20px;
+    border: transparent;
+}
+.addProductSubmit{
+    background: #2a8080;
+    color: white;
+    width: 50%;
+    margin: 10px;
+    border-radius: 20px;
+    padding: 5px 10px;
+    border: transparent;
+}
+.products{
+	min-height: 700px;
+}
+.viewProducts{
+	display: flex;
+	justify-content:space-between;
+	flex-wrap: wrap;
+}
+.productDiv{
+	display:flex;
+	padding: 10px;
+	border-radius:20px;
+	background: white; 	
+	margin:10px 0 10px 0;
+}
+
+.pagination{
+	margin-left: auto;
+	margin-right: auto;
+	
+}
