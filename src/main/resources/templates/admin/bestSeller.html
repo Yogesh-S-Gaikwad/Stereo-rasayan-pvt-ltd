@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Best Selling Products</title>
+</head>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/dashboard.css">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet" />
+<body>
+<section class="sec-navbar">
+		<nav class="navbar navbar-expand-lg">
+			<a class="navbar-brand" href="#"> <img src="/images/navLogo.svg"
+				alt="Logo" class="brand-logo" />
+			</a> <a class="navbar-brand-mobile" href="#"> <img
+				src="images/navLogo.svg" alt="Logo" class="brand-logo-m" />
+			</a>
+
+			<!-- Toggler -->
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#mainNav"
+				aria-controls="mainNav" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler"><svg
+						xmlns="http://www.w3.org/2000/svg" width="38" height="20"
+						viewBox="0 0 38 20" fill="none">
+              <path d="M16 2L36 2" stroke="black" stroke-width="3"
+							stroke-linecap="round" />
+              <path d="M9 10L36 10" stroke="black" stroke-width="3"
+							stroke-linecap="round" />
+              <path d="M2 18L36 18" stroke="black" stroke-width="3"
+							stroke-linecap="round" />
+            </svg> </span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="mainNav">
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link" th:href="@{/}">Home</a>
+					</li>
+					<div class="dropdown nav-item">
+  						<button class="btn  dropdown-toggle nav-link" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+  						 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+  						<path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+						</svg> [[${user.getUsername}]]
+  						</button>
+  						<ul class="dropdown-menu " aria-labelledby="dropdownMenuButton2">
+    				<li><a class="dropdown-item nav-link" href="/logout">logout</a></li>
+  					</ul>
+					</div>
+				</ul>
+			</div>
+		</nav>
+	</section>
+	<section class="left-right">
+		<section class="side-bar">
+			<div class="side-bar-item container">
+				<a th:href="@{/admin/dashboard}">All Product</a>
+				<div class="sidebar-line"></div>
+				<a th:href="@{/admin/addProduct}">Add Product</a>
+				<div class="sidebar-line"></div>
+				<a th:href="@{/admin/best-selling-product}">Best Selling</a>
+				<div class="sidebar-line"></div>
+				<a href="">Order</a>
+				<div class="sidebar-line"></div>
+				<a th:href="@{/admin/subscribers}">Subscriber</a>
+				<div class="sidebar-line"></div>
+				<a href="">Users</a>
+				<div class="sidebar-line"></div>
+				<a href="">Log Out</a>
+			</div>
+		</section>
+		<section class="allProduct">
+			<section class="products">
+				<h3>Best Selling Products</h3>
+				<div class="container viewProducts">
+
+					<div th:each="p : ${products}" class="productDiv">
+						<div class="col-lg-2 ">
+							<p class="pName" th:text="${p.name}">Product Name</p>
+							<p class="pCategory" th:text="${p.category}"></p>
+						</div>
+						<span class="col-lo-4">
+							<p class="discriptionDox" th:text="${p.description}"></p>
+						</span> 
+						<span class="col-lo-2 pDiscGroup1"> 
+							<span class="pDiscGroup">
+								<p class="pSampleQty">Sample Qty:</p>
+								<p th:text="${p.packingSize}"></p>
+							</span> 
+							<span class="pDiscGroup">
+								<p class="pCasNo">CAS No:</p>
+								<p th:text="${p.casNo}"></p>
+
+							</span> 
+							<span class="pDiscGroup">
+								<p class="p.Price">Price:</p>
+								<p th:text="${p.rate}"></p>
+							</span>
+
+
+						</span>
+						<div class="col-lg-2  pdfimg">
+							<span class="pPdf"><a th:href="@{/pdf/{id}(id=${p.id})}"
+								target="_blank">View PDF</a> </span>
+							<samp class="pImage">
+								<img th:src="@{/image/{id}(id=${p.id})}" width="50" /><br>
+							</samp>
+
+						</div>
+						<span class="col-lg-2">
+							<a th:href="@{/edit-product/{id}(id=${p.id}, source='best-selling-product')}"
+   								onclick="return confirm('Are you sure you want to edit this product?');"
+  								 class="btn btn-primary">
+ 									 Edit
+							</a>
+							<form th:action="@{/delete-product/{id}(id=${p.id})}"
+								method="post" style="margin-top: 10px;">
+								<button type="submit" class="btn btn-danger"
+									onclick="return confirm('Are you sure you want to delete this product?');">
+									Delete</button>
+							</form>
+						</span>
+						
+					</div>
+					
+				</div>
+			</section>
+		</section>
+
+
+</body>
+</html>

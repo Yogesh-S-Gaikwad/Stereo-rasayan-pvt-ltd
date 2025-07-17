@@ -16,6 +16,7 @@ public class Products {
     private String rate;
     private String description;
     private String category;
+    private String bestSeller;
 
     @Lob
     @Column(name = "image", columnDefinition = "LONGBLOB")
@@ -100,6 +101,15 @@ public class Products {
 		this.productPdf = productPdf;
 	}
 
+	public String getBestSeller() {
+		return bestSeller;
+	}
+
+	public void setBestSeller(String bestSeller) {
+		this.bestSeller = bestSeller;
+	}
+	
+	
  
     
     

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>Verify OTP</h2>
+
+<div th:if="${message}">
+    <p th:text="${message}"></p>
+</div>
+
+<div th:if="${error}">
+    <p style="color:red;" th:text="${error}"></p>
+</div>
+
+<form action="/verify-otp" method="post">
+    <p>
+        Enter OTP: <input type="text" name="otp" required />
+    </p>
+    <button type="submit">Verify</button>
+</form>
+
+</body>
+</html>

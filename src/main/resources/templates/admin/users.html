@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Show Subscribers</title>
+</head>
+<link rel="stylesheet" th:href="@{/style.css}">
+<link rel="stylesheet" th:href="@{/dashboard.css}">
+<link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+<body>
+    <section class="sec-navbar">
+		<nav class="navbar navbar-expand-lg">
+			<a class="navbar-brand" href="#"> <img src="/images/navLogo.svg"
+				alt="Logo" class="brand-logo" />
+			</a> <a class="navbar-brand-mobile" href="#"> <img
+				src="images/navLogo.svg" alt="Logo" class="brand-logo-m" />
+			</a>
+
+			<!-- Toggler -->
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#mainNav"
+				aria-controls="mainNav" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler"><svg
+						xmlns="http://www.w3.org/2000/svg" width="38" height="20"
+						viewBox="0 0 38 20" fill="none">
+              <path d="M16 2L36 2" stroke="black" stroke-width="3"
+							stroke-linecap="round" />
+              <path d="M9 10L36 10" stroke="black" stroke-width="3"
+							stroke-linecap="round" />
+              <path d="M2 18L36 18" stroke="black" stroke-width="3"
+							stroke-linecap="round" />
+            </svg> </span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="mainNav">
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+					
+					<li class="nav-item"><a class="nav-link" th:href="@{/}">Home</a>
+					</li>
+					<div class="dropdown nav-item">
+  						<button class="btn  dropdown-toggle nav-link" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+  						 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+  						<path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+						</svg> [[${user.getUsername}]]
+  						</button>
+  						<ul class="dropdown-menu " aria-labelledby="dropdownMenuButton2">
+    				<li><a class="dropdown-item nav-link" href="/logout">logout</a></li>
+  					</ul>
+					</div>
+				</ul>
+			</div>
+		</nav>
+	</section>
+	<section class="left-right">
+		<section class="side-bar">
+			<div class="side-bar-item container">
+				<a th:href="@{/admin/dashboard}">All Product</a>
+				<div class="sidebar-line"></div>
+				<a th:href="@{/admin/addProduct}">Add Product</a>
+				<div class="sidebar-line"></div>
+				<a th:href="@{/admin/best-selling-product}">Best Selling</a>
+				<div class="sidebar-line"></div>
+				<a href="">Order</a>
+				<div class="sidebar-line"></div>
+				<a th:href="@{/admin/subscribers}">Subscriber</a>
+				<div class="sidebar-line"></div>
+				<a href="">Users</a>
+				<div class="sidebar-line"></div>
+				
+			</div>
+		</section>
+ <section class="subscribers w-100">
+  <div class="container p-5">
+    <h2>Users</h2>
+
+    <table class="table table-bordered">
+      <thead class="table-light">
+        <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Mobile No</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Pincode</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="user : ${users}">
+          <td th:text="${user.id}"></td>
+          <td th:text="${user.username}"></td>
+          <td th:text="${user.email}"></td>
+          <td th:text="${user.mobileNumber}"></td>
+          <td th:text="${user.address}"></td>
+          <td th:text="${user.city}"></td>
+          <td th:text="${user.state}"></td>
+          <td th:text="${user.pincode}"></td>
+          <td>
+            <span th:if="${user.enabled}" class="badge bg-success">Active</span>
+			<span th:if="${!user.enabled}" class="badge bg-danger">Disabled</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="text-align: center;">
+    <a th:if="${currentPage > 0}"
+       th:href="@{/admin/users(page=${currentPage - 1})}"
+       style="margin-right: 10px; text-decoration: none; font-size: 24px;">&#8592;</a> 
+
+    <span th:text="'Page ' + (${currentPage} + 1) + ' of ' + totalPages"
+          style="font-weight: bold;"></span>
+
+    <a th:if="${currentPage + 1 < totalPages}"
+       th:href="@{/admin/users(page=${currentPage + 1})}"
+       style="margin-left: 10px; text-decoration: none; font-size: 24px;">&#8594;</a> 
+</div>
+  
+</section>
+</section>
+		
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

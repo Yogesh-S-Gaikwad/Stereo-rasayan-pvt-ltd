@@ -2,7 +2,7 @@
 /* --------login----- */
   /* Modal background */
     .modal {
-      display: none;
+      display: flex;
       position: fixed;
       z-index: 999;
       left: 0;
@@ -12,40 +12,51 @@
       background: rgba(0,0,0,0.5);
       justify-content: center;
       align-items: center;
+      padding:30px;
     }
 
     /* Modal box */
     .modal-content {
       background-color: #fff;
       padding: 20px;
-      width: 300px;
+      width: auto;
       border-radius: 8px;
       box-shadow: 0 5px 10px rgba(0,0,0,0.2);
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 30px;
-      background-image: url(images/about-bg.png);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-
+     
     }
     .form-login{
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        
     }
     .form-login input{
         padding: 10px;
-        border-radius: 20px;
-        border: transparent;
+        border-radius: 30px;
+		border: 1px solid #D7D7D7;
+		margin-bottom: 12px;
     }
     .loginHedding{
-        font-weight: 600;
+       color: #2A8080;
+	font-size: 24px;
+	font-weight: 600;
         
     }
+    .addressDiv{
+   	display: flex;
+   	flex-wrap: wrap;
+    }
+    .addressSpan{
+    display: flex;
+    flex-direction: column;
+    }
+    .addressSpan input{
+    width: 98%;
+    }
+    
     /* Close button */
     .close {
       position: absolute;
@@ -62,21 +73,35 @@
       margin-top: 8px;
     }
 
+.signupHedding{
+	color: #2A8080;
+	font-size: 24px;
+	font-weight: 600;
+}
+.singupline{
+	width: 277px;
+	height: 1px;
+	background-color:#D7D7D7;
+	margin-bottom: 24px;
+}
     .login-submit{
-      width: 100%;
-      border-radius: 20px;
+      width: 100%;  
+	border-radius: 30px;
+	background: #2A8080;
       margin-top: 10px;
       padding: 10px;
-      background: #007bff;
       color: white;
       border: none;
+      font-weight: 600;
+      font-size: 14px;
     }
     .sendOtpBtn{
       width: 100%;
       border-radius: 20px;
       margin-top: 10px;
       padding: 10px;
-      background: #007bff;
+      border-radius: 30px;
+		background-color: #2A8080;
       color: white;
       border: none;
     }    
@@ -89,3 +114,8 @@
       color: white;
       border: none;
 	}
+	.sendOtpBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+

@@ -86,77 +86,31 @@
         </div>
       </nav>
     </section>
-    <section class="pro-nav-2">
-        <div class="pro-nav2 container">
-            <button class="nav2-btns">All</button>
-            <button class="nav2-btns">Nanoparticles</button>
-            <button class="nav2-btns">Specialty Chemicals</button>
-            <button class="nav2-btns">Growth Regulators</button>
-            <div class="mob-category">
-                <select id="category" name="category">
-                <option value="all"selected>All</option>
-                <option value="nanoparticles" >Nanoparticles</option>
-                <option value="specialty-chemicals">Specialty Chemicals</option>
-                <option value="growth-regulators">Growth Regulators</option>
-                </select>
+<div class="cart-section">
+    <div class="cart-card" th:each="product : ${cartItems}">
+        <div class="cart-image">
+            <img th:src="@{${product.imageUrl}}" alt="Product Image">
+        </div>
+        <div class="cart-details">
+            <h3 th:text="${product.name}">Silver Nanopartical</h3>
+            <p>
+                <span>Sample Qty:</span> 1g upto<br>
+                <span>CAS No.:</span> <span th:text="${product.casNo}">1309-37-1</span><br>
+                <span>Price:</span> <span th:text="${product.price}">$234</span>
+            </p>
+        </div>
+        <div class="cart-actions">
+            <div class="qty-controls">
+                <button>-</button>
+                <span th:text="${product.quantity}">1</span>
+                <button>+</button>
             </div>
-            <div>
-                <span class="search-span">
-                    <input type="text" placeholder="Search Product">
-                    <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 20 22" fill="none">
-                        <path d="M13 14.3333L19 21M8 16.5556C4.13401 16.5556 1 13.0733 1 8.77778C1 4.48223 4.13401 1 8 1C11.866 1 15 4.48223 15 8.77778C15 13.0733 11.866 16.5556 8 16.5556Z" stroke="#2A8080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg></span>
-                </span>
-                <span><a href="">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
-                    <path d="M20.0268 19.6667C18.5256 19.6667 17.3087 20.8606 17.3087 22.3333C17.3087 23.8061 18.5256 25 20.0268 25C21.528 25 22.7449 23.8061 22.7449 22.3333C22.7449 20.8606 21.528 19.6667 20.0268 19.6667ZM20.0268 19.6667H9.55384C8.92723 19.6667 8.61335 19.6667 8.35537 19.5573C8.12779 19.4608 7.93036 19.3055 7.78651 19.1074C7.62528 18.8853 7.56043 18.5884 7.43207 18.0007L4.08708 2.6862C3.95573 2.08485 3.88918 1.7845 3.72608 1.5599C3.58223 1.3618 3.38483 1.20588 3.15726 1.1094C2.89922 1 2.58709 1 1.96022 1H1M5.07717 5H22.5726C23.5536 5 24.0435 5 24.3728 5.20048C24.6612 5.37608 24.8723 5.65149 24.9643 5.97201C25.0694 6.33791 24.9344 6.79995 24.6625 7.72461L22.7808 14.1246C22.6182 14.6775 22.5369 14.9534 22.372 15.1585C22.2264 15.3396 22.0344 15.4813 21.8168 15.5684C21.5709 15.6667 21.2787 15.6667 20.6956 15.6667H7.42898M7.79529 25C6.29412 25 5.07717 23.8061 5.07717 22.3333C5.07717 20.8606 6.29412 19.6667 7.79529 19.6667C9.29647 19.6667 10.5134 20.8606 10.5134 22.3333C10.5134 23.8061 9.29647 25 7.79529 25Z" stroke="#2A8080" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a></span>
-                
+            <div class="total-price">
+                Total Price <span th:text="'Rs. ' + ${product.totalPrice}">Rs. 000</span>
             </div>
         </div>
-    </section>
-   <section class="products-on-home"> 
-  <div class="container my-5">
-    <h4 class="mb-4 product-tital-home">All Product</h4>
-    <div class="row all-pro-div">
-      <!-- Loop over products -->
-      <div class="col-lg-4 col-md-6 mb-4" th:each="p : ${products}">
-        <div class="product-card">
-          <div class="product-img-div">
-            <img
-              th:src="@{/image/{id}(id=${p.id})}"
-              th:alt="${p.name}"
-              class="img-fluid product-image"
-            />
-          </div>
-          <div class="product-info-div">
-            <div class="product-title" th:text="${p.name}">
-              Product Name
-            </div>
-            <div class="product-info">
-              Sample Qty: <span th:text="${p.packingSize}">Qty</span>
-            </div>
-            <div class="product-info">
-              CAS No.: <span th:text="${p.casNo}">CAS</span>
-            </div>
-          </div>
-          <div class="product-btns">
-            <button class="btn btn-custom mt-2">Add to cart</button>
-            <div class="view-details">
-              <a
-                class="view-details"
-              	th:href="@{/productDetails/{id}(id=${p.id})}"
-              >
-                View Details
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-</section>
+</div>
     <footer class="footer">
       <div class="container">
         <img

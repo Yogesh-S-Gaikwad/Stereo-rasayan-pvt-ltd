@@ -1,53 +1,77 @@
-section{
-     background: powderblue;
-}
-.dashbordDiv{
-    height: 800px;
-    width: 100%;
-    background: powderblue;
-}
-.productform{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.productform input{
-    border-radius: 20px;
-    padding: 5px;
-    border: transparent;
-    width: 70%;
-}
-.Ufile{
-    border-radius: 20px;
-    border: transparent;
-}
-.addProductSubmit{
-    background: #2a8080;
-    color: white;
-    width: 50%;
-    margin: 10px;
-    border-radius: 20px;
-    padding: 5px 10px;
-    border: transparent;
-}
-.products{
-	min-height: 700px;
-}
-.viewProducts{
+.left-right {
 	display: flex;
-	justify-content:space-between;
-	flex-wrap: wrap;
-}
-.productDiv{
-	display:flex;
-	padding: 10px;
-	border-radius:20px;
-	background: white; 	
-	margin:10px 0 10px 0;
+	margin-top: 10px;
 }
 
-.pagination{
-	margin-left: auto;
-	margin-right: auto;
+.side-bar {
+	display: flex;
+	width: 250px;
+	height: 900px;
+	background: #E0F7F7;;
+	padding-left: 36px;
+	padding-top: 48px;
+}
+
+.side-bar-item {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+.side-bar-item a {
+	text-decoration: none;
+	color: #000;
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.sidebar-line {
+	width: 187px;
+	height: 1px;
+	background: #000;
+}
+
+.allProduct {
+	width: 100%;
+}
+
+.allProductsDiv {
+	height: 900px;
+	width: 100%;
+	background: wheat;
+}
+
+.productDiv {
+	display: flex;
+	flex-direction: row;
+	justify-content:space-between;
+	border-bottom: 1px solid black;
+	padding: 27px
+}
+
+.pName{
 	
+}
+.pCategory{
+	
+}
+
+.discriptionDox {
+	width: 280px;
+}
+.pDiscGroup{
+	display: flex;
+	justify-content: space-between;
+}
+.pdfimg{
+	display: flex;
+	justify-content: space-around;
+	 align-items: center;
+}
+.productDiv p{
+	margin: 0;
+}
+.pDiscGroup1{
+	min-width: 200px;
 }

@@ -1,0 +1,102 @@
+.Products {
+	width: 1054px;
+	height: 600px;
+	flex-shrink: 0;
+	border-radius: 12px;
+	border: 1px solid #000;
+	background: #FFF;
+	padding: 42px 85px;
+	margin-left: 40px;
+}
+
+.productform {
+	display: flex;
+	flex-direction: row;
+}
+
+.inputDox {
+	display: inline-flex;
+	padding: 15px 31px 14px 14px;
+	align-items: flex-start;
+	border-color: transparent;
+	border-radius: 12px;
+	background: #FFF;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	width: 401px;
+	margin-bottom: 18px;
+}
+
+.inputDoxImgPdf {
+	display: flex;
+	width: 161px;
+	height: 161px;
+	align-items: center;
+	justify-content: center; border-radius : 12px;
+	background: #FFF;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	border-radius: 12px;
+}
+
+.imgDiv, pdfDiv {
+	width: 50%;
+}
+
+.checkbox {
+	width: 19px;
+	height: 19px;
+	margin-left: 10px
+}
+
+.addProductSubmit {
+	display: flex;
+	width: 259px;
+	height: 60px;
+	padding: 8px 0px;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	border-color: transparent;
+	border-radius: 30px;
+	color: #FFF;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 600;
+	background: #2A8080;
+	margin-top: 63px
+}
+
+#file-name {
+	font-size: 14px;
+	color: #555;
+}
+
+.bestSeller {
+	margin-top: 71px
+}
+
+.hidden-file-input {
+	display: none;
+}
+.file-name-image{
+	margin-top: 12px;
+	text-align: center;
+}
+.file-name-pdf{
+	margin-top: 12px;
+	text-align: center;
+}
+.imgPdfGroup{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+.imgDiv{
+	 display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pdfDiv{
+		 display: flex;
+    flex-direction: column;
+    align-items: center;
+}

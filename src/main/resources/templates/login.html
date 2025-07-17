@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>login</title>
+ <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+<section class="sec-navbar">
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">
+          <img src="images/navLogo.svg" alt="Logo" class="brand-logo" />
+        </a>
+        <a class="navbar-brand-mobile" href="#">
+          <img src="images/navLogo.svg" alt="Logo" class="brand-logo-m" />
+        </a>
+
+        <!-- Toggler -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="38"
+              height="20"
+              viewBox="0 0 38 20"
+              fill="none"
+            >
+              <path
+                d="M16 2L36 2"
+                stroke="black"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+              <path
+                d="M9 10L36 10"
+                stroke="black"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+              <path
+                d="M2 18L36 18"
+                stroke="black"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+            </svg>
+          </span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{index}">Home</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" th:href="@{product}">Product</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{aboutUs}">About Us</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" th:href="@{contact}">Contact</a>
+            </li>
+            
+            <th:block th:if="${user==null}">
+            	<li class="nav-item">
+              <a href="#"class="nav-link"  th:href="@{/login}">Login</a>
+            </li>
+            </th:block>
+            <th:block th:if="${user!=null}">
+            
+            <div class="dropdown nav-item">
+  			<button class="btn  dropdown-toggle nav-link" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+  			 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+</svg> [[${user.getUsername}]]
+  				</button>
+  			<ul class="dropdown-menu " aria-labelledby="dropdownMenuButton2">
+    		<li><a class="dropdown-item nav-link" href="/logout">logout</a></li>
+  			</ul>
+			</div>
+			<li class="nav-item">
+              <a class="nav-link" th:href="@{cart}"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="21" viewBox="0 0 24 21" fill="none">
+  <path d="M23.7858 5.06401C23.6754 4.91209 23.528 4.78792 23.3562 4.70213C23.1844 4.61635 22.9934 4.5715 22.7994 4.57144H6.39943L5.01467 1.40573C4.83363 0.988478 4.52631 0.631986 4.13182 0.38165C3.73734 0.131314 3.27355 -0.00153784 2.79953 1.34317e-05H0V2.28573H2.79953L8.49218 15.2971C8.58336 15.5053 8.73718 15.6831 8.93427 15.8082C9.13136 15.9333 9.36291 16 9.59975 16H19.1995C19.6999 16 20.1475 15.704 20.3239 15.2594L23.9238 6.11658C23.9918 5.94358 24.0148 5.75744 23.9908 5.57412C23.9667 5.39081 23.8964 5.21577 23.7858 5.06401ZM18.3679 13.7143H10.4001L7.4002 6.85715H21.0678L18.3679 13.7143Z" fill="#333333"/>
+  <path d="M11 21C12.1046 21 13 20.1046 13 19C13 17.8954 12.1046 17 11 17C9.89543 17 9 17.8954 9 19C9 20.1046 9.89543 21 11 21Z" fill="#333333"/>
+  <path d="M19 21C20.1046 21 21 20.1046 21 19C21 17.8954 20.1046 17 19 17C17.8954 17 17 17.8954 17 19C17 20.1046 17.8954 21 19 21Z" fill="#333333"/>
+</svg></a>
+            </li>
+            </th:block>
+             
+          </ul>
+        </div>
+    
+</section>
+<section class="hero-sec d-flex align-items-center">
+      <div class="hero-sec1 container">
+        <div class="row">
+          <div class="left-col col-lg-6 col-md-12">
+            <h2 class="left-text fw-bold">
+              Advanced Nanoparticles & Specialty Chemicals for Industrial and
+              Research Applications
+            </h2>
+            <p class="left-text2">Certified quality. Seamless procurement.”</p>
+            <div class="hero-sec-btns">
+              <button class="exp-product">Explore Products</button>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12 right-img">
+            <span class="img-hero"></span>
+            <!-- <img src="images/first_cont_img.png" alt="" class="img-fluid section-image"> -->
+          </div>
+        </div>
+      </div>
+    </section>
+  <!-- Login Modal -->
+<div class="modal" id="loginModal">
+  <div class="modal-content">
+  <a class="close" th:href="@{/}">&times;</a>
+    
+    <h3 class="loginHedding">Login</h3>
+    <div class="singupline"></div>
+	
+	<div
+     th:if="${param.logout}" class="alert"
+     style="color:green;">logout Sucessfully
+	</div>
+	<div th:if="${param.error}" class="alert" style="color:red;">
+    [[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]
+	</div>
+
+    <form action="/login" method="post" class="form-login">
+      <input type="email" name="username" placeholder="Email" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <button type="submit" class="login-submit">Login</button>
+    </form>
+
+   <p style="margin-top: 10px;">
+      New user? <a th:href="@{signup}" id="showSignup" class="text-decoration-none text-primary">Sign Up</a>
+    </p>
+  </div>
+</div>
+
+</body>
+</html>
